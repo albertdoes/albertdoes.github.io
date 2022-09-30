@@ -1,9 +1,14 @@
-<svg width="128" height="128" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <circle cx="64" cy="64" r="64" fill="url(#paint0_radial_3_4)"/>
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
     <defs>
-        <radialGradient id="paint0_radial_3_4" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(64 0) rotate(90) scale(128)">
-            <stop offset="0.5" stop-color="#BD99CF"/>
-            <stop offset="1" stop-color="#008DD5"/>
+        <radialGradient id="grad" cx="0.5" cy="0.5" fx="0.8" fy="0.8">
+            <stop offset="0%" stop-color="#b175cc" />
+            <stop offset="50%" stop-color="#b175cc" />
+            <stop offset="100%" stop-color="#2481ce" />
         </radialGradient>
     </defs>
+    <g>
+        <path d="M391 76C391 76 121 76 121 436C121 256 391 256 391 256V76Z" fill="url(#grad)"/>
+        <circle cx="339.5" cy="384.5" r="51" fill="url(#grad)"/>
+    </g>
 </svg>
+
