@@ -1,14 +1,8 @@
-<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
-    <defs>
-        <radialGradient id="grad" cx="0.5" cy="0.5" fx="0.8" fy="0.8">
-            <stop offset="0%" stop-color="#b175cc" />
-            <stop offset="50%" stop-color="#b175cc" />
-            <stop offset="100%" stop-color="#2481ce" />
-        </radialGradient>
-    </defs>
-    <g>
-        <path d="M391 76C391 76 121 76 121 436C121 256 391 256 391 256V76Z" fill="url(#grad)"/>
-        <circle cx="339.5" cy="384.5" r="51" fill="url(#grad)"/>
-    </g>
+<svg width="492" height="512" viewBox="0 0 492 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Group 1">
+<path id="Ellipse 6" d="M149 228C239.969 228 327.213 203.979 391.538 161.22C455.863 118.462 492 60.4693 492 -6.10352e-05L149 -5.69449e-05L149 228Z" fill="#E1CBEC"/>
+<path id="Ellipse 9" d="M-3.48415e-05 512C-2.61931e-05 452.591 15.6982 395.616 43.6411 353.608C71.584 311.6 109.483 288 149 288L149 512L-3.48415e-05 512Z" fill="#C9A0DC"/>
+<path id="Ellipse 5" d="M492 512C492 376.209 455.863 245.98 391.538 149.961C327.213 53.9427 239.969 -3.89113e-05 149 -4.52448e-05L149 512L492 512Z" fill="#B175CC"/>
+<circle id="Ellipse 8" cx="64" cy="114" r="64" fill="#E1CBEC"/>
+</g>
 </svg>
-
