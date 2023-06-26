@@ -1,81 +1,78 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
+import "@styles/index.css"
+
+import Page from "@layouts/Page.astro";
+import Section from "@layouts/Section.astro";
+import Separator from "@components/Separator.astro"
+import ProjectCatalogue from "@components/ProjectCatalogue";
+import Icon from "@components/Icon"
+import ContactLinks from "@components/ContactLinks.astro";
+import PageMenu from "@components/PageMenu.astro";
 ---
 
-<Layout title="Welcome to Astro.">
-	<main>
-		<h1>Welcome to <span class="text-gradient">Astro</span></h1>
-		<p class="instructions">
-			To get started, open the directory <code>src/pages</code> in your project.<br />
-			<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
-		</p>
-		<ul role="list" class="link-card-grid">
-			<Card
-				href="https://docs.astro.build/"
-				title="Documentation"
-				body="Learn how Astro works and explore the official API docs."
-			/>
-			<Card
-				href="https://astro.build/integrations/"
-				title="Integrations"
-				body="Supercharge your project with new frameworks and libraries."
-			/>
-			<Card
-				href="https://astro.build/themes/"
-				title="Themes"
-				body="Explore a galaxy of community-built starter themes."
-			/>
-			<Card
-				href="https://astro.build/chat/"
-				title="Community"
-				body="Come say hi to our amazing Discord community. ❤️"
-			/>
-		</ul>
-	</main>
-</Layout>
-
-<style>
-	main {
-		margin: auto;
-		padding: 1.5rem;
-		max-width: 60ch;
-	}
-	h1 {
-		font-size: 3rem;
-		font-weight: 800;
-		margin: 0;
-	}
-	.text-gradient {
-		background-image: var(--accent-gradient);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-size: 400%;
-		background-position: 0%;
-	}
-	.instructions {
-		line-height: 1.6;
-		margin: 1rem 0;
-		border: 1px solid rgba(var(--accent), 25%);
-		background-color: white;
-		padding: 1rem;
-		border-radius: 0.4rem;
-	}
-	.instructions code {
-		font-size: 0.875em;
-		font-weight: bold;
-		background: rgba(var(--accent), 12%);
-		color: rgb(var(--accent));
-		border-radius: 4px;
-		padding: 0.3em 0.45em;
-	}
-	.instructions strong {
-		color: rgb(var(--accent));
-	}
-	.link-card-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-		gap: 1rem;
-		padding: 0;
-	}
-</style>
+<Page title="Albert's Place">
+    <div class="bg-back w-[100dvw] h-[100dvh] overflow-auto grid justify-items-center">
+        <header class="z-[1] px-lg py-sm sticky top-[0] w-full h-fit box bg-back flex justify-between items-center">
+            <h4 class="flex gap-sm items-center">
+                <span class="text-lg"><Icon name="logo" /></span>
+                <span>albertdoes_</span>
+            </h4>
+            <PageMenu />
+        </header>
+        <main class="max-w-[90ch] w-full">
+            <Section id="home">
+                <h1>
+                    <span>
+                        Web developer <br/>
+                        making what should work, <br/>
+                        work, and neatly.
+                    </span>
+                </h1>
+                <p>
+                    <span>
+                        I am Sai Aung Kyaw Htet / Albert ― a programming enthusiast
+                        who is passionate about learning and problem solving, and
+                        constantly seeking opportunities to apply the ways of systematic problem solving
+                        to learn from and solve real-life problems.
+                    </span>
+                </p>
+                <ContactLinks />
+            </Section>
+            <Separator />
+            <Section id="works">
+                <h3>
+                    <span>Featured Works</span>
+                </h3>
+                <p>
+                    <span>Some projects I've worked on and proud of.</span>
+                </p>
+                <br/>
+                <ProjectCatalogue client:load url="/featured-projects" />
+            </Section>
+            <Separator />
+            <Section id="connect">
+                <h3>
+                    Connect 
+                </h3>
+                <p>
+                    <span>
+                        Get in touch with me for
+                        <em class="text-fore font-serif">freelance, full-time, part-time and contributive</em>
+                        projects on <em class="text-fore font-serif">web frontend, backend and machine learning</em>.
+                        Because, why not? I like solving problems.
+                    </span>
+                </p>
+                <ContactLinks />
+            </Section>
+        </main>
+        <footer class="w-full card bg-transparent">
+            <h5 class="font-mono flex justify-center items-center gap-md">
+                <span>© 2023 | a work by
+                    <a data-fetch="links.json:github">@albertdoes</a>
+                </span>
+                <span>|</span>
+                <span><Icon name="logo" /></span>
+            </h5>
+        </footer>
+    </div>
+</Page>

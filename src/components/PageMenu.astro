@@ -1,0 +1,31 @@
+---
+import Icon from "./Icon";
+---
+
+<div id="page-menu" class="group top-[0] right-[0] flex flex-col justify-between gap-lg border-none data-[expanded=true]:bg-back data-[expanded=true]:absolute data-[expanded=true]:w-[100dvw] data-[expanded=true]:h-[100dvh] data-[expanded=true]:px-lg data-[expanded=true]:py-sm" data-expanded="false">
+    <div class="h-fit flex justify-end gap-lg">
+        <button data-size="fit" id="toggle-dark-mode">
+            <span class="dark:hidden block"><Icon name="moon" /></span>
+            <span class="hidden dark:block"><Icon name="sun" /></span>
+        </button>
+        <button data-size="fit" id="expand-menu">
+            <span class="group-data-[expanded=true]:hidden"><Icon name="menu" /></span>
+            <span class="group-data-[expanded=false]:hidden"><Icon name="cross" /></span>
+        </button>
+    </div>
+    <div class="z-[100] p-lg hidden group-data-[expanded=true]:block">
+        <nav class="flex flex-col gap-lg items-start">
+            <ul class="no-marker flex flex-col gap-lg">
+                {
+                    ["Home", "Works", "Connect"].map((e) => (
+                        <li>
+                            <a href={"#"+e.toLowerCase()} class="font-serif font-bold hover:text-xl">
+                                <span>{e}</span>
+                            </a>
+                        </li>
+                    ))
+                }
+            </ul>
+        </nav>
+    </div>
+</div>

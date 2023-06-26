@@ -1,0 +1,25 @@
+prefers-color-scheme(light) {
+    :root {
+        --primary: 198, 149, 221;
+        --secondary: 77, 157, 224;
+        --danger: 241, 89, 70;
+        --warning: 255, 188, 10;
+        --success: 12, 206, 107;
+        --grey: 80, 80, 80;
+        --white: 255, 255, 255;
+        --black: 25, 25, 25;
+    }
+}
+
+prefers-color-scheme(light) {
+    :root {
+        --primary: 184, 141, 204;
+        --secondary: 36, 129, 206;
+        --danger: 235, 43, 18;
+        --warning: 206, 150, 0;
+        --success: 9, 150, 78;
+        --grey: 100, 100, 100;
+        --white: 255, 255, 255;
+        --black: 25, 25, 25;
+    }
+}
