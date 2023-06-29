@@ -36,14 +36,14 @@ function fetchAndFill(act: (data: any, key: string, e: Element, uri: string) => 
         fetchingRegister[uri]
         ? act(fetchingRegister[uri], key, e, uri)
         : fetch(uri)
-            .then(res => res.json())
-            .then(data => {
+        .then(res => res.json())
+        .then(data => {
                 fetchingRegister[uri] = data;
                 act(data, key, e, uri);
             });
-    });
-}
-
+        });
+    }
+    
 window.addEventListener("load", async function() {
     mode.set(sessionStorage.getItem("mode") as string ?? "dark");
 
@@ -51,4 +51,5 @@ window.addEventListener("load", async function() {
         uri === "links.json" && e.setAttribute("href", data[key]);
     }
     fetchAndFill(handle);
+    (document.querySelector("#page-menu > :last-child") as HTMLElement).style.top = `${document.getElementsByTagName("header")[0].clientHeight}px`;
 });

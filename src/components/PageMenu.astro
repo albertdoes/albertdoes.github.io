@@ -2,7 +2,7 @@
 import Icon from "./Icon";
 ---
 
-<div id="page-menu" class="group top-[0] right-[0] flex flex-col justify-between gap-lg border-none data-[expanded=true]:bg-back data-[expanded=true]:absolute data-[expanded=true]:w-[100dvw] data-[expanded=true]:h-[100dvh] data-[expanded=true]:px-lg data-[expanded=true]:py-sm" data-expanded="false">
+<div id="page-menu" class="group flex flex-col justify-between gap-lg border-none" data-expanded="false">
     <div class="h-fit flex justify-end gap-lg">
         <button data-size="fit" id="toggle-dark-mode">
             <span class="dark:hidden block"><Icon name="moon" /></span>
@@ -13,13 +13,13 @@ import Icon from "./Icon";
             <span class="group-data-[expanded=false]:hidden"><Icon name="cross" /></span>
         </button>
     </div>
-    <div class="z-[100] p-lg hidden group-data-[expanded=true]:block">
+    <div class="right-lg w-[20ch] z-[100] card absolute scale-[0] group-data-[expanded=true]:scale-[1] [transform-origin:100%_0%]">
         <nav class="flex flex-col gap-lg items-start">
             <ul class="no-marker flex flex-col gap-lg">
                 {
                     ["Home", "Works", "Connect"].map((e) => (
                         <li>
-                            <a href={"#"+e.toLowerCase()} class="font-serif font-bold hover:text-xl">
+                            <a href={"#"+e.toLowerCase()} class="font-serif font-bold">
                                 <span>{e}</span>
                             </a>
                         </li>

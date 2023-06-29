@@ -34,6 +34,7 @@ module.exports = {
 
             fore: "rgb(var(--fg), <alpha-value>)",
             back: "rgb(var(--bg), <alpha-value>)",
+            accent: "rgb(var(--accent), <alpha-value>)",
 
             purple: {
                 100: "rgb(var(--purple-100), <alpha-value>)",
