@@ -83,80 +83,130 @@
         accent-color: rgb(var(--purple-500));
         font-size: 16px;
 
-        --purple-100: 243, 234, 248;
-        --purple-200: 220, 191, 234;
-        --purple-300: 197, 148, 221;
-        --purple-400: 174, 105, 207;
-        --purple-500: 151, 62, 193;
-        --purple-600: 118, 48, 150;
-        --purple-700: 84, 34, 107;
-        --purple-800: 50, 21, 64;
-        --purple-900: 17, 7, 21;
+        --purple-100: 244, 236, 248;
+        --purple-150: 236, 230, 248;
+        --purple-200: 231, 220, 244;
+        --purple-250: 226, 210, 240;
+        --purple-300: 221, 200, 236;
+        --purple-350: 216, 190, 232;
+        --purple-400: 211, 180, 228;
+        --purple-450: 206, 170, 224;
+        --purple-500: 201, 160, 220;
+        --purple-550: 176, 140, 194;
+        --purple-600: 153, 121, 169;
+        --purple-650: 130, 102, 144;
+        --purple-700: 107, 83, 119;
+        --purple-750: 84, 64, 94;
+        --purple-800: 61, 45, 69;
+        --purple-850: 38, 26, 44;
+        --purple-900: 15, 7, 19;
 
-        --blue-100: 231, 242, 251;
-        --blue-200: 183, 215, 242;
-        --blue-300: 134, 189, 234;
+        --blue-100: 233, 243, 251;
+        --blue-150: 206, 227, 245;
+        --blue-200: 182, 214, 241;
+        --blue-250: 158, 201, 237;
+        --blue-300: 134, 188, 233;
+        --blue-350: 110, 175, 229;
         --blue-400: 86, 162, 225;
+        --blue-450: 62, 149, 221;
         --blue-500: 38, 136, 217;
-        --blue-600: 30, 106, 169;
-        --blue-700: 21, 75, 121;
-        --blue-800: 13, 45, 72;
-        --blue-900: 4, 15, 24;
+        --blue-550: 32, 119, 190;
+        --blue-600: 28, 104, 166;
+        --blue-650: 24, 89, 142;
+        --blue-700: 20, 74, 118;
+        --blue-750: 16, 59, 94;
+        --blue-800: 12, 44, 70;
+        --blue-850: 8, 29, 46;
+        --blue-900: 4, 14, 22;
 
-        --red-100: 253, 231, 229;
-        --red-200: 249, 184, 176;
-        --red-300: 245, 137, 123;
-        --red-400: 241, 90, 71;
+        --red-100: 253, 234, 231;
+        --red-150: 251, 211, 207;
+        --red-200: 249, 187, 180;
+        --red-250: 247, 163, 153;
+        --red-300: 245, 139, 126;
+        --red-350: 243, 115, 99;
+        --red-400: 241, 91, 72;
+        --red-450: 239, 67, 45;
         --red-500: 237, 43, 18;
-        --red-600: 184, 34, 14;
+        --red-550: 213, 39, 16;
+        --red-600: 186, 34, 14;
+        --red-650: 159, 29, 12;
         --red-700: 132, 24, 10;
-        --red-800: 79, 14, 6;
-        --red-900: 26, 5, 2;
+        --red-750: 105, 19, 8;
+        --red-800: 78, 14, 6;
+        --red-850: 51, 9, 4;
+        --red-900: 24, 4, 2;
 
-        --yellow-100: 255, 247, 227;
-        --yellow-200: 255, 232, 170;
-        --yellow-300: 255, 216, 113;
-        --yellow-400: 255, 201, 57;
-        --yellow-500: 255, 186, 0;
-        --yellow-600: 255, 186, 0;
+        --yellow-100: 255, 248, 229;
+        --yellow-150: 255, 242, 203;
+        --yellow-200: 255, 234, 174;
+        --yellow-250: 255, 226, 145;
+        --yellow-300: 255, 218, 116;
+        --yellow-350: 255, 210, 87;
+        --yellow-400: 255, 202, 58;
+        --yellow-450: 255, 194, 29;
+        --yellow-550: 255, 186, 0;
+        --yellow-500: 229, 166, 0;
+        --yellow-600: 200, 145, 0;
+        --yellow-650: 171, 124, 0;
         --yellow-700: 142, 103, 0;
-        --yellow-800: 85, 62, 0;
-        --yellow-900: 28, 21, 0;
+        --yellow-750: 113, 82, 0;
+        --yellow-800: 84, 61, 0;
+        --yellow-850: 55, 40, 0;
+        --yellow-900: 26, 19, 0;
 
-        --green-100: 228, 253, 241;
-        --green-200: 175, 250, 212;
-        --green-300: 121, 247, 183;
-        --green-400: 68, 244, 154;
+        --green-100: 231, 254, 242;
+        --green-150: 203, 255, 230;
+        --green-200: 176, 253, 215;
+        --green-250: 149, 251, 200;
+        --green-300: 122, 249, 185;
+        --green-350: 95, 247, 170;
+        --green-400: 68, 245, 155;
+        --green-450: 41, 243, 140;
         --green-500: 14, 241, 125;
-        --green-600: 11, 187, 97;
-        --green-700: 8, 134, 69;
-        --green-800: 5, 80, 42;
-        --green-900: 2, 27, 14;
+        --green-550: 15, 213, 110;
+        --green-600: 13, 186, 96;
+        --green-650: 11, 159, 82;
+        --green-700: 9, 132, 68;
+        --green-750: 7, 105, 54;
+        --green-800: 5, 78, 40;
+        --green-850: 3, 51, 26;
+        --green-900: 1, 24, 12;
 
-        --grey-100: 241, 240, 242;
-        --grey-200: 213, 210, 215;
-        --grey-300: 186, 180, 188;
-        --grey-400: 158, 150, 162;
-        --grey-500: 130, 120, 135;
-        --grey-600: 101, 93, 105;
-        --grey-700: 72, 67, 75;
-        --grey-800: 43, 40, 45;
-        --grey-900: 14, 13, 15;
+        --grey-100: 242, 241, 244;
+        --grey-150: 227, 226, 232;
+        --grey-200: 209, 207, 216;
+        --grey-250: 191, 188, 200;
+        --grey-300: 173, 169, 184;
+        --grey-350: 155, 150, 168;
+        --grey-400: 137, 131, 152;
+        --grey-450: 119, 112, 136;
+        --grey-500: 101, 93, 120;
+        --grey-550: 89, 81, 105;
+        --grey-600: 78, 71, 92;
+        --grey-650: 67, 61, 79;
+        --grey-700: 56, 51, 66;
+        --grey-750: 45, 41, 53;
+        --grey-800: 34, 31, 40;
+        --grey-850: 23, 21, 27;
+        --grey-900: 12, 11, 14;
 
         --white: 255, 255, 255;
         --black: 25, 25, 25;
     }
     :root:not(:is([data-mode = "dark"])) {
         @apply text-grey-700;
-        --fg: var(--purple-800);
-        --bg: var(--purple-100);
-        --accent: var(--purple-100);
+        --fg: var(--purple-900);
+        --bg: var(--purple-200);
+        --fg-accent: var(--purple-850);
+        --bg-accent: var(--purple-250);
     }
     :root[data-mode = "dark"] {
         @apply text-grey-500;
         --fg: var(--purple-200);
         --bg: var(--purple-900);
-        --accent: var(--purple-900);
+        --fg-accent: var(--purple-250);
+        --bg-accent: var(--purple-850);
     }
     * {
         margin: 0;
@@ -180,18 +230,20 @@
     p { @apply py-xs; }
     hr { @apply w-[100%] border-grey/[0.5] border-dashed; }
 
-    button { @apply box max-w-[25ch] border-transparent truncate flex justify-center items-center gap-sm; }
-    button[data-type = "primary"] { @apply btn-primary; }
-    button:not([data-type]), button[data-type = "secondary"] { @apply btn-secondary; }
-    button[data-type = "tertiary"] { @apply btn-tertiary; }
-
-    button:not([data-role]), button[data-role = "normal"] { --btn-color: var(--fg); }
-    button[data-role = "danger"] { --btn-color: var(--red-500); }
-    button:disabled { --btn-color: var(--grey-500); }
-
-    button[data-size = "full"] { @apply max-w-none w-full; }
-    button[data-size = "fit"] { @apply !p-xs; }
-    button:active { filter: brightness(0.8); }
+    button {
+        @apply box max-w-[25ch] border-transparent truncate flex justify-center items-center gap-sm;
+        @apply data-[type=primary]:btn-primary;
+        @apply data-[type=secondary]:btn-secondary;
+        @apply data-[type=tertiary]:btn-tertiary;
+        @apply data-[role=normal]:[--btn-color:var(--fg);];
+        @apply data-[role=danger]:[--btn-color:var(--red-500);];
+        @apply disabled:[--btn-color:var(--grey-500;)];
+        @apply data-[size=full]:max-w-none data-[size=full]:w-full;
+        @apply data-[size=fit]:!p-xs;
+        @apply active:brightness-[0.8];
+    }
+    button:not([data-type]) { @apply btn-secondary; }
+    button:not([data-role]) { --btn-color: var(--fg); }
 
     label { @apply py-xs text-fore font-semibold block; }
     input {
@@ -231,18 +283,18 @@
 @layer components {
     .box { @apply border-[1px] border-fore/[0.125] backdrop-blur-lg; }
 
-    .plate { @apply box bg-fore/[0.0625] }
-    .plate-hover { @apply box bg-fore/[0.03125]; }
+    .plate { @apply bg-backAccent dark:bg-backAccent}
+    .plate-hover { @apply bg-purple-300 dark:bg-purple-800; }
     .plate-hoverable { @apply plate hover:plate-hover; }
 
-    .preview { @apply text-transparent bg-fore/[0.0625] rounded-md; }
+    .preview { @apply text-transparent plate-hover rounded-md; }
 
     .button-like {
-        @apply box p-xs rounded-lg text-fore border-transparent flex items-center gap-sm;
+        @apply p-xs rounded-lg text-fore flex items-center gap-sm;
         @apply hover:plate-hover hover:text-fore;
         @apply dark:hover:text-fore;
     }
-    .shade { @apply drop-shadow-[4px_8px_8px_rgb(0,0,0,0.35)]; }
+    .shade { @apply drop-shadow-[4px_4px_8px_rgb(0,0,0,0.25)]; }
 
     .card { @apply plate p-lg rounded-lg; }
     .card-hover { @apply plate-hover; }
@@ -250,6 +302,8 @@
         @apply card;
         @apply hover:card-hover;
     }
+
+    .dialog { @apply plate bg-purple-300 dark:bg-purple-800 p-lg rounded-xl; }
 
     .btn-primary {
         @apply px-sm py-x2s rounded-md bg-[rgb(var(--btn-color))] text-back;
