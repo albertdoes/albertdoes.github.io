@@ -1,0 +1,13 @@
+---
+interface Props {
+    id: string;
+}
+const { id } = Astro.props;
+---
+
+<div id={id} class="tab-wrapper">
+    <div class="tab-switches marquee-x"></div>
+    <div class="tab-body">
+        <slot name="tab" />
+    </div>
+</div>

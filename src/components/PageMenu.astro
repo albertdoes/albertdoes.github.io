@@ -1,25 +1,25 @@
 ---
 import Icon from "./Icon";
+
+interface Props {
+    sections: string[],
+}
+
+const { sections } = Astro.props;
 ---
 
-<div id="page-menu" class="group flex flex-col justify-between gap-lg border-none" data-expanded="false">
-    <div class="h-fit flex justify-end gap-lg">
-        <button data-size="fit" id="toggle-dark-mode">
-            <span class="dark:hidden block"><Icon name="moon" /></span>
-            <span class="hidden dark:block"><Icon name="sun" /></span>
-        </button>
-        <button data-size="fit" id="expand-menu">
-            <span class="group-data-[expanded=true]:hidden"><Icon name="menu" /></span>
-            <span class="group-data-[expanded=false]:hidden"><Icon name="cross" /></span>
-        </button>
-    </div>
-    <div class="right-lg w-[20ch] z-[100] dialog absolute scale-[0] group-data-[expanded=true]:scale-[1] [transform-origin:100%_0%]">
+<div id="page-menu" class="flex flex-col justify-between gap-lg border-none">
+    <button data-type="tertiary" data-size="fit" id="expand-menu" class="group" data-menu-expanded="false">
+        <span class="group-data-[menu-expanded=true]:hidden"><Icon name="menu" /></span>
+        <span class="group-data-[menu-expanded=false]:hidden"><Icon name="cross" /></span>
+    </button>
+    <div class="right-lg top-[50%] w-[20ch] z-[100] dialog absolute scale-[0] data-[menu-expanded=true]:scale-[1] [transform-origin:100%_50%] [translate:0_-50%]" data-menu-expanded="false">
         <nav class="flex flex-col gap-lg items-start">
             <ul class="no-marker flex flex-col gap-lg">
                 {
-                    ["Home", "Works", "Connect"].map((e) => (
+                    sections.map((e) => (
                         <li>
-                            <a href={"#"+e.toLowerCase()} class="font-serif font-bold">
+                            <a href={"#"+e.toLowerCase()} class="font-bold">
                                 <span>{e}</span>
                             </a>
                         </li>

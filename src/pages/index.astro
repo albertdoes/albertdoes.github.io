@@ -7,19 +7,19 @@ import Separator from "@components/Separator.astro"
 import ProjectCatalogue from "@components/ProjectCatalogue";
 import Icon from "@components/Icon"
 import ContactLinks from "@components/ContactLinks.astro";
-import PageMenu from "@components/PageMenu.astro";
+import Header from "@layouts/Header.astro";
+import Body from "@layouts/Body.astro";
+import WorkNote from "@components/WorkNote.astro";
+import DarkModeButton from "@components/DarkModeButton.astro";
 ---
 
-<Page title="Albert's Place">
-    <div class="bg-back w-[100dvw] h-[100dvh] overflow-auto grid justify-items-center">
-        <header class="z-[1] px-lg py-sm sticky top-[0] w-full h-fit box bg-back flex justify-between items-center">
-            <h4 class="flex gap-sm items-center">
-                <span class="text-lg"><Icon name="logo" /></span>
-                <span>albertdoes_</span>
-            </h4>
-            <PageMenu />
-        </header>
-        <main class="max-w-[90ch] w-full">
+<Page title="Albert's Place" description="Sai Aung Kyaw Htet (Albert)'s portfolio and personal blog.">
+    <Body slot="body">
+        <Header>
+            <span class="text-lg"><Icon name="logo" /></span>
+            <DarkModeButton />
+        </Header>
+        <main class="w-full h-full overflow-scroll">
             <Section id="home">
                 <h1>
                     <span>
@@ -36,7 +36,16 @@ import PageMenu from "@components/PageMenu.astro";
                         to learn from and solve real-life problems.
                     </span>
                 </p>
-                <ContactLinks />
+                <nav class="py-md">
+                    <ul class="grid gap-sm">
+                        <li>
+                            <a href="#works"><span>Works</span></a>
+                        </li>
+                        <li>
+                            <a href="#connect"><span>Connect</span></a>
+                        </li>
+                    </ul>
+                </nav>
             </Section>
             <Separator />
             <Section id="works">
@@ -47,7 +56,7 @@ import PageMenu from "@components/PageMenu.astro";
                     <span>Some projects I've worked on and proud of.</span>
                 </p>
                 <br/>
-                <ProjectCatalogue client:load url="/featured-projects" />
+                <ProjectCatalogue client:load url="/featured-projects" sector="" />
             </Section>
             <Separator />
             <Section id="connect">
@@ -57,22 +66,15 @@ import PageMenu from "@components/PageMenu.astro";
                 <p>
                     <span>
                         Get in touch with me for
-                        <em class="text-fore font-serif">freelance, full-time, part-time and contributive</em>
-                        projects on <em class="text-fore font-serif">web frontend, backend and machine learning</em>.
-                        Because, why not? I like solving problems.
+                        <em class="text-fore">freelance, full-time, part-time and contributive</em>
+                        projects on <em class="text-fore">web frontend, backend and machine learning</em>.
                     </span>
                 </p>
                 <ContactLinks />
             </Section>
+            <footer class="p-xl flex justify-between">
+                <WorkNote />
+            </footer>
         </main>
-        <footer class="w-full p-lg">
-            <h5 class="font-mono flex justify-center items-center gap-md">
-                <span>© 2023 | a work by
-                    <a data-fetch="links.json:github">@albertdoes</a>
-                </span>
-                <span>|</span>
-                <span><Icon name="logo" /></span>
-            </h5>
-        </footer>
-    </div>
+    </Body>
 </Page>

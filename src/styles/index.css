@@ -3,318 +3,501 @@
 @tailwind utilities;
 
 @font-face {
-    font-family: Fraunces;
-    src: url("/fonts/Fraunces.woff2");
-    font-weight: 100 900;
+    font-family: InstrumentSans;
+    src: url("/fonts/InstrumentSans.woff2");
+    font-weight: 400 700;
+    font-feature-settings: "case", "liga", "pnum", "tnum", "ss01", "ss03", "ss04", "ss05", "ss06", "ss07", "ss08", "ss09", "ss10", "ss11", "ss12";
     font-display: swap;
 }
 
 @font-face {
-    font-family: Fraunces;
-    src: url("/fonts/Fraunces-Italic.woff2");
-    font-weight: 100 900;
+    font-family: InstrumentSans;
+    src: url("/fonts/InstrumentSansItalic.woff2");
+    font-weight: 400 700;
+    font-feature-settings: "case", "liga", "pnum", "tnum", "ss01", "ss03", "ss04", "ss05", "ss06", "ss07", "ss08", "ss09", "ss10", "ss11", "ss12";
     font-display: swap;
     font-style: italic;
 }
 
 @font-face {
-    font-family: IBMPlexSans;
-    src: url("/fonts/IBMPlexSans-Regular.woff2");
-    font-weight: 500;
+    font-family: JetBrainsMono;
+    src: url("/fonts/JetBrainsMono.ttf");
+    font-weight: 100 800;
+    font-feature-settings: "calt", "zero", "ss01";
     font-display: swap;
 }
 
 @font-face {
-    font-family: IBMPlexSans;
-    src: url("/fonts/IBMPlexSans-Italic.woff2");
-    font-weight: 500;
+    font-family: JetBrainsMono;
+    src: url("/fonts/JetBrainsMonoItalic.ttf");
+    font-weight: 100 800;
+    font-feature-settings: "calt", "zero", "ss01";
     font-display: swap;
     font-style: italic;
 }
 
 @font-face {
-    font-family: IBMPlexSans;
-    src: url("/fonts/IBMPlexSans-Bold.woff2");
-    font-weight: 700;
+    font-family: BricolageGrotesque;
+    src: url("/fonts/SpaceGrotesk.woff2");
+    font-weight: 400 700;
     font-display: swap;
-}
-
-@font-face {
-    font-family: IBMPlexSans;
-    src: url("/fonts/IBMPlexSans-BoldItalic.woff2");
-    font-weight: 700;
-    font-display: swap;
-    font-style: italic;
-}
-
-
-@font-face {
-    font-family: IBMPlexMono;
-    src: url("/fonts/IBMPlexMono-Regular.woff2");
-    font-weight: 500;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: IBMPlexMono;
-    src: url("/fonts/IBMPlexMono-Italic.woff2");
-    font-weight: 500;
-    font-display: swap;
-    font-style: italic;
-}
-
-@font-face {
-    font-family: IBMPlexMono;
-    src: url("/fonts/IBMPlexMono-Bold.woff2");
-    font-weight: 700;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: IBMPlexMono;
-    src: url("/fonts/IBMPlexMono-BoldItalic.woff2");
-    font-weight: 700;
-    font-display: swap;
-    font-style: italic;
 }
 
 @layer base {
     :root {
-        accent-color: rgb(var(--purple-500));
-        font-size: 16px;
+        accent-color: hsl(var(--purple-500));
+        color: hsl(var(--text));
+        font-size: 14px;
 
-        --purple-100: 244, 236, 248;
-        --purple-150: 236, 230, 248;
-        --purple-200: 231, 220, 244;
-        --purple-250: 226, 210, 240;
-        --purple-300: 221, 200, 236;
-        --purple-350: 216, 190, 232;
-        --purple-400: 211, 180, 228;
-        --purple-450: 206, 170, 224;
-        --purple-500: 201, 160, 220;
-        --purple-550: 176, 140, 194;
-        --purple-600: 153, 121, 169;
-        --purple-650: 130, 102, 144;
-        --purple-700: 107, 83, 119;
-        --purple-750: 84, 64, 94;
-        --purple-800: 61, 45, 69;
-        --purple-850: 38, 26, 44;
-        --purple-900: 15, 7, 19;
+        --purple-100: 276,56%,97%;
+        --purple-200: 276,56%,93%;
+        --purple-300: 276,56%,84%;
+        --purple-400: 276,56%,69%;
+        --purple-500: 276,56%,50%;
+        --purple-600: 276,56%,31%;
+        --purple-700: 276,56%,16%;
+        --purple-800: 276,56%,7%;
+        --purple-900: 276,56%,3%;
 
-        --blue-100: 233, 243, 251;
-        --blue-150: 206, 227, 245;
-        --blue-200: 182, 214, 241;
-        --blue-250: 158, 201, 237;
-        --blue-300: 134, 188, 233;
-        --blue-350: 110, 175, 229;
-        --blue-400: 86, 162, 225;
-        --blue-450: 62, 149, 221;
-        --blue-500: 38, 136, 217;
-        --blue-550: 32, 119, 190;
-        --blue-600: 28, 104, 166;
-        --blue-650: 24, 89, 142;
-        --blue-700: 20, 74, 118;
-        --blue-750: 16, 59, 94;
-        --blue-800: 12, 44, 70;
-        --blue-850: 8, 29, 46;
-        --blue-900: 4, 14, 22;
+        --purple-muted-100: 276,15%,97%;
+        --purple-muted-200: 276,15%,85%;
+        --purple-muted-300: 276,15%,74%;
+        --purple-muted-400: 276,15%,62%;
+        --purple-muted-500: 276,15%,50%;
+        --purple-muted-600: 276,15%,38%;
+        --purple-muted-700: 276,15%,26%;
+        --purple-muted-800: 276,15%,15%;
+        --purple-muted-900: 276,15%,3%;
 
-        --red-100: 253, 234, 231;
-        --red-150: 251, 211, 207;
-        --red-200: 249, 187, 180;
-        --red-250: 247, 163, 153;
-        --red-300: 245, 139, 126;
-        --red-350: 243, 115, 99;
-        --red-400: 241, 91, 72;
-        --red-450: 239, 67, 45;
-        --red-500: 237, 43, 18;
-        --red-550: 213, 39, 16;
-        --red-600: 186, 34, 14;
-        --red-650: 159, 29, 12;
-        --red-700: 132, 24, 10;
-        --red-750: 105, 19, 8;
-        --red-800: 78, 14, 6;
-        --red-850: 51, 9, 4;
-        --red-900: 24, 4, 2;
+        --blue-100: 230,45%,97%;
+        --blue-200: 230,45%,93%;
+        --blue-300: 230,45%,84%;
+        --blue-400: 230,45%,69%;
+        --blue-500: 230,45%,50%;
+        --blue-600: 230,45%,31%;
+        --blue-700: 230,45%,16%;
+        --blue-800: 230,45%,7%;
+        --blue-900: 230,45%,3%;
 
-        --yellow-100: 255, 248, 229;
-        --yellow-150: 255, 242, 203;
-        --yellow-200: 255, 234, 174;
-        --yellow-250: 255, 226, 145;
-        --yellow-300: 255, 218, 116;
-        --yellow-350: 255, 210, 87;
-        --yellow-400: 255, 202, 58;
-        --yellow-450: 255, 194, 29;
-        --yellow-550: 255, 186, 0;
-        --yellow-500: 229, 166, 0;
-        --yellow-600: 200, 145, 0;
-        --yellow-650: 171, 124, 0;
-        --yellow-700: 142, 103, 0;
-        --yellow-750: 113, 82, 0;
-        --yellow-800: 84, 61, 0;
-        --yellow-850: 55, 40, 0;
-        --yellow-900: 26, 19, 0;
+        --blue-muted-100: 230,15%,97%;
+        --blue-muted-200: 230,15%,93%;
+        --blue-muted-300: 230,15%,84%;
+        --blue-muted-400: 230,15%,69%;
+        --blue-muted-500: 230,15%,50%;
+        --blue-muted-600: 230,15%,31%;
+        --blue-muted-700: 230,15%,16%;
+        --blue-muted-800: 230,15%,7%;
+        --blue-muted-900: 230,15%,3%;
 
-        --green-100: 231, 254, 242;
-        --green-150: 203, 255, 230;
-        --green-200: 176, 253, 215;
-        --green-250: 149, 251, 200;
-        --green-300: 122, 249, 185;
-        --green-350: 95, 247, 170;
-        --green-400: 68, 245, 155;
-        --green-450: 41, 243, 140;
-        --green-500: 14, 241, 125;
-        --green-550: 15, 213, 110;
-        --green-600: 13, 186, 96;
-        --green-650: 11, 159, 82;
-        --green-700: 9, 132, 68;
-        --green-750: 7, 105, 54;
-        --green-800: 5, 78, 40;
-        --green-850: 3, 51, 26;
-        --green-900: 1, 24, 12;
+        --red-100: 2,75%,97%;
+        --red-200: 2,75%,93%;
+        --red-300: 2,75%,84%;
+        --red-400: 2,75%,69%;
+        --red-500: 2,75%,50%;
+        --red-600: 2,75%,31%;
+        --red-700: 2,75%,16%;
+        --red-800: 2,75%,7%;
+        --red-900: 2,75%,3%;
+
+        --red-muted-100: 2,20%,97%;
+        --red-muted-200: 2,20%,93%;
+        --red-muted-300: 2,20%,84%;
+        --red-muted-400: 2,20%,69%;
+        --red-muted-500: 2,20%,50%;
+        --red-muted-600: 2,20%,31%;
+        --red-muted-700: 2,20%,16%;
+        --red-muted-800: 2,20%,7%;
+        --red-muted-900: 2,20%,3%;
+
+        --yellow-100: 50,85%,97%;
+        --yellow-200: 50,85%,93%;
+        --yellow-300: 50,85%,84%;
+        --yellow-400: 50,85%,69%;
+        --yellow-500: 50,85%,50%;
+        --yellow-600: 50,85%,31%;
+        --yellow-700: 50,85%,16%;
+        --yellow-800: 50,85%,7%;
+        --yellow-900: 50,85%,3%;
+
+        --yellow-muted-100: 50,25%,97%;
+        --yellow-muted-200: 50,25%,93%;
+        --yellow-muted-300: 50,25%,84%;
+        --yellow-muted-400: 50,25%,69%;
+        --yellow-muted-500: 50,25%,50%;
+        --yellow-muted-600: 50,25%,31%;
+        --yellow-muted-700: 50,25%,16%;
+        --yellow-muted-800: 50,25%,7%;
+        --yellow-muted-900: 50,25%,3%;
+
+        --green-100: 140,65%,97%;
+        --green-200: 140,65%,93%;
+        --green-300: 140,65%,84%;
+        --green-400: 140,65%,69%;
+        --green-500: 140,65%,50%;
+        --green-600: 140,65%,31%;
+        --green-700: 140,65%,16%;
+        --green-800: 140,65%,7%;
+        --green-900: 140,65%,3%;
+
+        --green-muted-100: 140,15%,97%;
+        --green-muted-200: 140,15%,93%;
+        --green-muted-300: 140,15%,84%;
+        --green-muted-400: 140,15%,69%;
+        --green-muted-500: 140,15%,50%;
+        --green-muted-600: 140,15%,31%;
+        --green-muted-700: 140,15%,16%;
+        --green-muted-800: 140,15%,7%;
+        --green-muted-900: 140,15%,3%;
 
         --grey-100: 242, 241, 244;
-        --grey-150: 227, 226, 232;
         --grey-200: 209, 207, 216;
-        --grey-250: 191, 188, 200;
         --grey-300: 173, 169, 184;
-        --grey-350: 155, 150, 168;
         --grey-400: 137, 131, 152;
-        --grey-450: 119, 112, 136;
         --grey-500: 101, 93, 120;
-        --grey-550: 89, 81, 105;
         --grey-600: 78, 71, 92;
-        --grey-650: 67, 61, 79;
         --grey-700: 56, 51, 66;
-        --grey-750: 45, 41, 53;
         --grey-800: 34, 31, 40;
-        --grey-850: 23, 21, 27;
         --grey-900: 12, 11, 14;
 
-        --white: 255, 255, 255;
-        --black: 25, 25, 25;
+        @apply primary;
     }
     :root:not(:is([data-mode = "dark"])) {
-        @apply text-grey-700;
-        --fg: var(--purple-900);
-        --bg: var(--purple-200);
-        --fg-accent: var(--purple-850);
-        --bg-accent: var(--purple-250);
+        --primary-fg: var(--purple-700);
+        --primary-fg-accent: var(--purple-600);
+        --primary-bg: var(--purple-100);
+        --primary-bg-accent: var(--purple-200);
+        --primary-text: var(--purple-muted-700);
+        --primary-text-accent: var(--purple-muted-600);
+        --primary-muted: var(--purple-muted-300);
+        --primary-muted-accent: var(--purple-muted-500);
+
+        --secondary-fg: var(--blue-700);
+        --secondary-fg-accent: var(--blue-600);
+        --secondary-bg: var(--blue-100);
+        --secondary-bg-accent: var(--blue-200);
+        --secondary-text: var(--blue-muted-700);
+        --secondary-text-accent: var(--blue-muted-600);
+        --secondary-muted: var(--blue-muted-300);
+        --secondary-muted-accent: var(--blue-muted-500);
+
+        --danger-fg: var(--red-700);
+        --danger-fg-accent: var(--red-600);
+        --danger-bg: var(--red-100);
+        --danger-bg-accent: var(--red-200);
+        --danger-text: var(--red-muted-700);
+        --danger-text-accent: var(--red-muted-600);
+        --danger-muted: var(--red-muted-300);
+        --danger-muted-accent: var(--red-muted-500);
+
+        --warning-fg: var(--yellow-700);
+        --warning-fg-accent: var(--yellow-600);
+        --warning-bg: var(--yellow-100);
+        --warning-bg-accent: var(--yellow-200);
+        --warning-text: var(--yellow-muted-700);
+        --warning-text-accent: var(--yellow-muted-600);
+        --warning-muted: var(--yellow-muted-300);
+        --warning-muted-accent: var(--yellow-muted-500);
+
+        --success-fg: var(--green-700);
+        --success-fg-accent: var(--green-600);
+        --success-bg: var(--green-100);
+        --success-bg-accent: var(--green-200);
+        --success-text: var(--green-muted-700);
+        --success-text-accent: var(--green-muted-600);
+        --success-muted: var(--green-muted-300);
+        --success-muted-accent: var(--green-muted-500);
     }
     :root[data-mode = "dark"] {
-        @apply text-grey-500;
-        --fg: var(--purple-200);
-        --bg: var(--purple-900);
-        --fg-accent: var(--purple-250);
-        --bg-accent: var(--purple-850);
+        --primary-fg: var(--purple-300);
+        --primary-fg-accent: var(--purple-400);
+        --primary-bg: var(--purple-900);
+        --primary-bg-accent: var(--purple-800);
+        --primary-text: var(--purple-muted-300);
+        --primary-text-accent: var(--purple-muted-400);
+        --primary-muted: var(--purple-muted-700);
+        --primary-muted-accent: var(--purple-muted-500);
+
+        --secondary-fg: var(--blue-300);
+        --secondary-fg-accent: var(--blue-400);
+        --secondary-bg: var(--blue-900);
+        --secondary-bg-accent: var(--blue-800);
+        --secondary-text: var(--blue-muted-300);
+        --secondary-text-accent: var(--blue-muted-400);
+        --secondary-muted: var(--blue-muted-700);
+        --secondary-muted-accent: var(--blue-muted-500);
+
+        --danger-fg: var(--red-300);
+        --danger-fg-accent: var(--red-400);
+        --danger-bg: var(--red-900);
+        --danger-bg-accent: var(--red-800);
+        --danger-text: var(--red-muted-300);
+        --danger-text-accent: var(--red-muted-400);
+        --danger-muted: var(--red-muted-700);
+        --danger-muted-accent: var(--red-muted-500);
+
+        --warning-fg: var(--yellow-300);
+        --warning-fg-accent: var(--yellow-400);
+        --warning-bg: var(--yellow-900);
+        --warning-bg-accent: var(--yellow-800);
+        --warning-text: var(--yellow-muted-300);
+        --warning-text-accent: var(--yellow-muted-400);
+        --warning-muted: var(--yellow-muted-700);
+        --warning-muted-accent: var(--yellow-muted-500);
+
+        --success-fg: var(--green-300);
+        --success-fg-accent: var(--green-400);
+        --success-bg: var(--green-900);
+        --success-bg-accent: var(--green-800);
+        --success-text: var(--green-muted-300);
+        --success-text-accent: var(--green-muted-400);
+        --success-muted: var(--green-muted-700);
+        --success-muted-accent: var(--green-muted-500);
     }
     * {
         margin: 0;
         color: inherit;
         scroll-behavior: smooth;
+        scroll-snap-align: start;
         transition-duration: 125ms;
+
+        -ms-overflow-style: none;
+        scrollbar-width: none;
     }
     *::selection { @apply bg-fore/[0.4] text-back; }
+    *::-webkit-scrollbar { display: none; }
+    *[data-hidden="true"] { @apply scale-0; }
 
     h1, h2, h3, h4, h5, h6 {
-        @apply py-[0.25em] text-fore font-serif font-bold;
+        @apply py-[0.25em] text-fore font-serif font-bold capitalize;
     }
-    h1 { @apply !text-x2l; }
-    h2 { @apply !text-xl; }
-    h3 { @apply !text-lg; }
-    h4 { @apply !text-md; }
-    h5 { @apply !text-sm; }
-    h6 { @apply !text-xs; }
+    h1 { @apply text-x2l; }
+    h2 { @apply text-xl; }
+    h3 { @apply text-lg; }
+    h4 { @apply text-md; }
+    h5 { @apply text-sm; }
+    h6 { @apply text-xs; }
 
-    a { @apply text-fore hover:underline; }
+    a { @apply underline hover:text-foreAccent; }
     p { @apply py-xs; }
-    hr { @apply w-[100%] border-grey/[0.5] border-dashed; }
+    hr { @apply w-[100%] border-mutedAccent/[0.5] border-dashed; }
 
     button {
-        @apply box max-w-[25ch] border-transparent truncate flex justify-center items-center gap-sm;
+        @apply box max-w-[25ch] border-transparent font-medium capitalize truncate flex justify-center items-center gap-sm;
         @apply data-[type=primary]:btn-primary;
         @apply data-[type=secondary]:btn-secondary;
         @apply data-[type=tertiary]:btn-tertiary;
-        @apply data-[role=normal]:[--btn-color:var(--fg);];
-        @apply data-[role=danger]:[--btn-color:var(--red-500);];
-        @apply disabled:[--btn-color:var(--grey-500;)];
+        @apply data-[role=normal]:primary;
+        @apply data-[role=danger]:danger;
         @apply data-[size=full]:max-w-none data-[size=full]:w-full;
-        @apply data-[size=fit]:!p-xs;
+        @apply data-[size=fit]:!p-sm data-[size="fit"]:aspect-square;
+        @apply data-[floating]:shade;
         @apply active:brightness-[0.8];
+        @apply disabled:saturate-[0] disabled:pointer-events-none;
     }
     button:not([data-type]) { @apply btn-secondary; }
-    button:not([data-role]) { --btn-color: var(--fg); }
+    button:not([data-role]) { @apply primary; }
 
-    label { @apply py-xs text-fore font-semibold block; }
+    label { @apply py-x2s text-mutedAccent text-sm; }
     input {
         @apply focus:outline-none;
-        @apply focus-visible:outline-fore focus-visible:outline-[1px];
+        @apply focus-visible:border-mutedAccent;
     }
+    fieldset { @apply p-md box rounded-md; }
+    legend { @apply px-xs; }
 
-    input, textarea {
-        @apply text-fore plate rounded-md p-x2s place-content-center;
-        @apply hover:plate-hover;
+    input, textarea, select {
+        @apply w-full border-b-[1px] border-mutedAccent bg-backAccent/[0.3125] px-xs py-x2s grid place-content-center;
+        @apply hover:bg-backAccent/[0.625];
+        @apply placeholder:text-muted;
+        @apply invalid:danger;
     }
-    output { @apply box text-fore rounded-md p-x2s; }
+    output { @apply box p-x2s; }
 
     input[type = "checkbox"], input[type = "radio"] {
-        @apply appearance-none w-md h-md grid;
-        @apply hover:plate-hover;
-        @apply before:text-fore/[0.3125] before:text-sm;
-        @apply checked:bg-fore;
-        @apply checked:before:text-back/[0.625];
-        @apply checked:hover:bg-fore/[0.625];
+        @apply appearance-none w-[1.25em] h-[1.25em] border-[0.1em] grid place-content-center;
+        @apply before:content-[""] before:h-[0.5em] before:w-[0.5em] before:bg-foreAccent before:scale-0;
+        @apply checked:before:scale-[1];
+        @apply hover:bg-foreAccent/[0.3125];
     }
-    input[type = "radio"] { @apply rounded-full; }
-
-    input[type = "checkbox"]:before { content: "━"; }
-    input[type = "radio"]:before { content: "⏺"; }
+    input[type = "radio"] { @apply before:[clip-path:circle(50%_at_50%_50%)] rounded-full; }
+    input[type = "checkbox"] { @apply before:[clip-path:polygon(0_30%,100%_30%,100%_70%,0_70%)] rounded-md; }
 
     ul:not(.no-marker) > li {
         @apply flex;
-        @apply before:content-["⟡"] before:text-fore before:flex before:items-center before:align-middle before:pe-sm;
+        @apply before:content-["▸"] before:text-fore before:flex before:items-center before:align-middle before:pe-sm;
     }
 
+    input[type = "number"]:where(::-webkit-outer-spin-button, ::-webkit-inner-spin-button) {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+    input[type = "number"] { -moz-appearance: textfield; }
     input, textarea, button, select, a {
         -webkit-tap-highlight-color: transparent;
     }
 }
 
 @layer components {
-    .box { @apply border-[1px] border-fore/[0.125] backdrop-blur-lg; }
+    .primary {
+        --fg: var(--primary-fg);
+        --fg-accent: var(--primary-fg-accent);
+        --bg: var(--primary-bg);
+        --bg-accent: var(--primary-bg-accent);
+        --text: var(--primary-text);
+        --text-accent: var(--primary-text-accent);
+        --muted: var(--primary-muted);
+        --muted-accent: var(--primary-muted-accent);
+    }
+    .secondary {
+        --fg: var(--secondary-fg);
+        --fg-accent: var(--secondary-fg-accent);
+        --bg: var(--secondary-bg);
+        --bg-accent: var(--secondary-bg-accent);
+        --text: var(--secondary-text);
+        --text-accent: var(--secondary-text-accent);
+        --muted: var(--secondary-muted);
+        --muted-accent: var(--secondary-muted-accent);
+    }
+    .danger {
+        --fg: var(--danger-fg);
+        --fg-accent: var(--danger-fg-accent);
+        --bg: var(--danger-bg);
+        --bg-accent: var(--danger-bg-accent);
+        --text: var(--danger-text);
+        --text-accent: var(--danger-text-accent);
+        --muted: var(--danger-muted);
+        --muted-accent: var(--danger-muted-accent);
+    }
+    .warning {
+        --fg: var(--warning-fg);
+        --fg-accent: var(--warning-fg-accent);
+        --bg: var(--warning-bg);
+        --bg-accent: var(--warning-bg-accent);
+        --text: var(--warning-text);
+        --text-accent: var(--warning-text-accent);
+        --muted: var(--warning-muted);
+        --muted-accent: var(--warning-muted-accent);
+    }
+    .success {
+        --fg: var(--success-fg);
+        --fg-accent: var(--success-fg-accent);
+        --bg: var(--success-bg);
+        --bg-accent: var(--success-bg-accent);
+        --text: var(--success-text);
+        --text-accent: var(--success-text-accent);
+        --muted: var(--success-muted);
+        --muted-accent: var(--success-muted-accent);
+    }
 
-    .plate { @apply bg-backAccent dark:bg-backAccent}
-    .plate-hover { @apply bg-purple-300 dark:bg-purple-800; }
+    .bound-top { @apply border-t-[1px] border-mutedAccent/[0.3125]; }
+    .bound-left { @apply border-l-[1px] border-mutedAccent/[0.3125]; }
+    .bound-bottom { @apply border-b-[1px] border-mutedAccent/[0.3125]; }
+    .bound-right { @apply border-r-[1px] border-mutedAccent/[0.3125]; }
+    .bound-x { @apply border-x-[1px] border-mutedAccent/[0.3125]; }
+    .bound-y { @apply border-y-[1px] border-mutedAccent/[0.3125]; }
+    .box { @apply border-[1px] border-mutedAccent/[0.3125]; }
+
+    .plate { @apply bg-backAccent; }
+    .plate-hover { @apply bg-foreAccent text-backAccent; }
     .plate-hoverable { @apply plate hover:plate-hover; }
 
-    .preview { @apply text-transparent plate-hover rounded-md; }
+    .spacize { @apply px-lg py-md; }
+
+    .preview { @apply text-transparent bg-foreAccent/[0.125]; }
 
     .button-like {
-        @apply p-xs rounded-lg text-fore flex items-center gap-sm;
-        @apply hover:plate-hover hover:text-fore;
-        @apply dark:hover:text-fore;
+        @apply p-xs rounded-md text-fore flex items-center gap-sm;
+        @apply hover:text-foreAccent hover:bg-backAccent;
     }
-    .shade { @apply drop-shadow-[4px_4px_8px_rgb(0,0,0,0.25)]; }
+    .shade { @apply shade-se; }
+    .shade-se { @apply shadow-[4px_4px_16px_hsl(0,0%,0%,0.4)]; }
+    .shade-ne { @apply shadow-[4px_-4px_16px_hsl(0,0%,0%,0.4)]; }
+    .shade-sw { @apply shadow-[-4px_4px_16px_hsl(0,0%,0%,0.4)]; }
+    .shade-nw { @apply shadow-[-4px_-4px_16px_hsl(0,0%,0%,0.4)]; }
+    .shade-e { @apply shadow-[4px_0_16px_hsl(0,0%,0%,0.4)]; }
+    .shade-w { @apply shadow-[-4px_0_16px_hsl(0,0%,0%,0.4)]; }
+    .shade-s { @apply shadow-[0_4px_16px_hsl(0,0%,0%,0.4)]; }
+    .shade-n { @apply shadow-[0_-4px_16px_hsl(0,0%,0%,0.4)]; }
 
-    .card { @apply plate p-lg rounded-lg; }
+    .card { @apply plate text-textAccent spacize rounded-md; }
     .card-hover { @apply plate-hover; }
     .card-hoverable {
         @apply card;
         @apply hover:card-hover;
     }
 
-    .dialog { @apply plate bg-purple-300 dark:bg-purple-800 p-lg rounded-xl; }
+    .tab-wrapper { @apply w-full h-full overflow-clip grid grid-rows-[auto_1fr] gap-md; }
+    .tab-switches { @apply bound-bottom flex gap-md overflow-x-scroll; }
+    .tab-switches > * {
+        @apply px-sm py-x2s w-fit text-muted font-medium capitalize cursor-default border-b-[0.2rem] border-transparent;
+        @apply hover:border-current hover:!decoration-transparent hover:bg-backAccent;
+        @apply data-[tab-selected=true]:text-foreAccent data-[tab-selected=true]:border-current;
+    }
+    .tab-body {
+        @apply w-full h-full overflow-hidden grid grid-flow-col auto-cols-[100%];
+    }
+    .tab-body > * {
+        @apply w-full h-full overflow-scroll border-black;
+    }
+
+    .palenia-patch {
+        @apply w-full h-full box border-transparent grid place-content-center;
+        @apply data-[patch-contrast="black"]:text-fore dark:data-[patch-contrast="black"]:text-back;
+        @apply data-[patch-contrast="white"]:text-back dark:data-[patch-contrast="white"]:text-fore;
+    }
+    .palenia-patch:before {
+        @apply content-[attr(data-patch-label)] font-bold font-mono;
+    }
+    .palenia-palette {
+        @apply w-full h-full rounded-md overflow-hidden flex flex-col outline outline-[2px] outline-offset-[0.25rem] outline-transparent;
+        @apply data-[palette-selected="true"]:outline-mutedAccent;
+    }
+    .palenia-catalogue {
+        @apply w-full h-full p-lg overflow-scroll grid grid-flow-col auto-cols-[minmax(30ch,30%)] gap-lg;
+    }
+    [data-show-patch-label="false"] .palenia-patch {
+        @apply !text-transparent;
+    }
+
+    .marquee-x[data-marquee-direction="s"] {
+        mask-image: linear-gradient(90deg, red 0% 90%, transparent);
+    }
+    .marquee-x[data-marquee-direction="e"] {
+        mask-image: linear-gradient(270deg, red 0% 90%, transparent);
+    }
+    .marquee-x[data-marquee-direction="i"] {
+        mask-image: linear-gradient(90deg, transparent, red 10% 90%, transparent);
+    }
+    .marquee-y[data-marquee-direction="s"] {
+        mask-image: linear-gradient(180deg, red 0% 90%, transparent);
+    }
+    .marquee-y[data-marquee-direction="e"] {
+        mask-image: linear-gradient(0deg, red 0% 90%, transparent);
+    }
+    .marquee-y[data-marquee-direction="i"] {
+        mask-image: linear-gradient(0deg, transparent, red 10% 90%, transparent);
+    }
+
+    .tabulize { @apply bound-top bound-left border-mutedAccent/[0.125]; }
+    .tabulize > * { @apply bound-bottom bound-right border-mutedAccent/[0.125]; }
+
+    .dialog { @apply fixed top-[50%] left-[50%] max-w-[30ch] w-full rounded-md [translate:-50%_-50%] bg-back shade grid; }
+    .dialog > * { @apply bg-backAccent/[0.3125]; }
+    .dialog > .head { @apply bound-bottom pe-md; }
+    .dialog > .head > :first-child { @apply spacize font-bold }
+    .dialog > .body { @apply w-full h-full spacize overflow-scroll; }
+    .dialog > .interactions { @apply flex gap-md spacize bound-top; }
 
     .btn-primary {
-        @apply px-sm py-x2s rounded-md bg-[rgb(var(--btn-color))] text-back;
-        @apply hover:plate-hover hover:text-[rgb(var(--btn-color))];
+        @apply px-md py-xs bg-foreAccent text-backAccent rounded-md;
+        @apply hover:bg-muted hover:text-foreAccent;
     }
     .btn-secondary {
-        @apply px-sm py-x2s rounded-md plate text-[rgb(var(--btn-color))];
-        @apply hover:plate-hover;
+        @apply px-md py-xs bg-backAccent text-foreAccent rounded-md;
+        @apply hover:bg-muted hover:text-foreAccent;
     }
     .btn-tertiary {
-        @apply text-[rgb(var(--btn-color))];
-        @apply hover:underline hover:decoration-[1px];
+        @apply text-fore rounded-md;
+        @apply hover:text-foreAccent hover:bg-backAccent;
     }
 }

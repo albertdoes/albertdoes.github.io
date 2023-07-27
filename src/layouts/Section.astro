@@ -1,7 +1,13 @@
 ---
-const { id } = Astro.props;
+interface Props {
+    id: string,
+    height?: "full" | "fit"
+}
+const { id, height } = Astro.props;
 ---
 
-<section id={id} class="w-[100%] h-fit p-xl">
-    <slot/>
+<section id={id} class=`w-full h-${height} p-xl grid place-items-center`>
+    <div class="max-w-[70ch] w-full">
+        <slot/>
+    </div>
 </section>

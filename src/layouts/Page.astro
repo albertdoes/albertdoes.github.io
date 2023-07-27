@@ -1,25 +1,28 @@
 ---
-const { title } = Astro.props;
+interface Props {
+    title: string,
+    description: string
+}
+const { title, description } = Astro.props;
 ---
 
 <!DOCTYPE html>
-<html data-mode="dark" lang="en-US">
+<html data-elster-mode="dark" lang="en-US">
     <head>
         <title>{title}</title>
         <meta charset="utf-8" />
         <meta
             name="description" 
-            content="Sai Aung Kyaw Htet (Albert)'s portfolio and personal blog."
+            content={description}
         />
         <meta
-            name="viewport" content="width=device-width, initial-scale=1.0"
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
         />
         <link rel="icon" href="favicon.svg" />
-        <!--link rel="license" href="LICENSE.txt" /-->
+        <link rel="license" href="LICENSE.txt" />
         <!--link rel="manifest" href="manifest.json"-->
-        <script src="../scripts/onload.ts"></script>
+        <script src="@scripts/onload.ts"></script>
     </head>
-    <body>
-        <slot />
-    </body>
+    <slot name="body" />
 </html>

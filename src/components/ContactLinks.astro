@@ -5,7 +5,7 @@ import Icon from "./Icon";
 <nav class="w-fit py-lg flex gap-lg text-[1em] items-center">
     {
         ["github", "twitter", "linkedin", "telegram", "mail"].map(e => (
-            <a target="_blank" class="button-like" data-fetch={`links.json:${e}`}>
+            <a target="_blank" class="button-like" data-fetch={`/misc/links.json:${e}`}>
                 <span><Icon name={e} /></span>
             </a>
         ))

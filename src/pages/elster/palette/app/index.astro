@@ -1,0 +1,132 @@
+---
+import "@styles/index.css"
+
+import Page from "@layouts/Page.astro";
+import Icon from "@components/Icon";
+import Header from "@layouts/Header.astro";
+import Body from "@layouts/Body.astro";
+import DarkModeButton from "@components/DarkModeButton.astro";
+import TabWrapper from "@components/TabWrapper.astro";
+
+const groups: string[] = [
+    "",
+    "Sine",
+    "Quad",
+    "Cubic",
+    "Quad",
+    "Quint",
+    "Expo",
+    "Circ"
+];
+
+const channelMap: Record<string, Record<string, string>> = {
+    "hue": {
+        "channel": "a",
+        "min": "0",
+        "max": "360",
+    },
+    "saturation": {
+        "channel": "b",
+        "min": "0",
+        "max": "100",
+    },
+    "luminosity": {
+        "channel": "c",
+        "min": "0",
+        "max": "100",
+    }
+};
+---
+
+<script src="@scripts/elster/palette/onload.ts"></script>
+
+<Page title="Palenia | App" description="Palenia: An Algorithmic Color Palette Generator">
+    <Body slot="body">
+        <Header>
+            <span class="text-lg"><Icon name="logo" /></span>
+            <DarkModeButton />
+        </Header>
+        <main class="w-full h-full overflow-hidden grid place-items-center">
+            <div id="color-board" class="w-full h-full [grid-row:1/span_1] [grid-column:1/span_1] overflow-hidden" />
+            <div id="configuration" class="dialog grid overflow-clip">
+                <div class="head flex justify-between items-center">
+                    <span>Configure</span>
+                    <button data-hider="configuration" data-type="tertiary" data-size="fit">
+                        <span><Icon name="cross" /></span>
+                    </button>
+                </div>
+                <div class="body">
+                    <form id="palenia-configure" class="grid grid-rows-[1fr_auto] gap-md">
+                        <div class="grid grid-cols-2 gap-md">
+                            <div class="grid">
+                                <label for="steps">Steps</label>
+                                <input name="steps" id="steps" maxlength="3" placeholder="number of steps" min="0" type="number" />
+                            </div>
+                            <div class="grid">
+                                <label for="color-space">Color Space</label>
+                                <select name="format" id="color-space">
+                                    <option selected value="hex">HEX</option>
+                                    <option value="rgb">RGB</option>
+                                    <option value="hsl">HSL</option>
+                                </select>
+                            </div>
+                        </div>
+                        <TabWrapper id="setup">
+                            {
+                                ["hue", "saturation", "luminosity"].map(s => (
+                                    <div slot="tab" class="grid grid-cols-2 gap-md" id={s}>
+                                        <div class="grid">
+                                            <label for={s + "-start"}>Start</label>
+                                            <input name={`range.${channelMap[s].channel}.start`} id={s + "-start"} maxlength="3" placeholder="start" min={channelMap[s].min} max={channelMap[s].max} type="number" />
+                                        </div>
+                                        <div class="grid">
+                                            <label for={s + "-end"}>End</label>
+                                            <input name={`range.${channelMap[s].channel}.end`} id={s + "-end"} maxlength="3" placeholder="end" min={channelMap[s].min} max={channelMap[s].max} type="number" />
+                                        </div>
+                                        <div class="col-span-2 grid">
+                                            <label for={s + "-easing"}>Cubic Bezier Easing</label>
+                                            <select name={`easing.${channelMap[s].channel}`} id={s + "-easing"}>
+                                                <option>linear</option>
+                                                <option>ease</option>
+                                                {
+                                                    groups.map(e => (
+                                                        <optgroup label={e === "" ? "Default" : e}>
+                                                            <option>{"easeIn" + e}</option>
+                                                            <option>{"easeOut" + e}</option>
+                                                            <option>{"easeInOut" + e}</option>
+                                                        </optgroup>
+                                                    ))
+                                                }
+                                            </select>
+                                        </div>
+                                    </div>
+                                ))
+                            }
+                        </TabWrapper>
+                    </form>
+                </div>
+                <div class="interactions">
+                    <button id="save" data-size="full" data-type="primary">
+                        <span><Icon name="save" /></span>
+                        <span>Save As JSON</span>
+                    </button>
+                </div>
+            </div>
+            <div class="h-min [grid-row:1/span_1] [grid-column:1/span_1] justify-self-end self-end flex gap-md p-lg">
+                <button id="add-palette" data-floating data-size="fit">
+                    <span><Icon name="plus" /></span>
+                </button>
+                <button id="remove-palette" data-floating data-size="fit">
+                    <span><Icon name="minus" /></span>
+                </button>
+                <button class="group" id="view-colors" data-floating data-size="fit" data-show-patch-label="false">
+                    <span class="group-data-[show-patch-label='true']:hidden"><Icon name="eye" /></span>
+                    <span class="group-data-[show-patch-label='false']:hidden"><Icon name="eye-off" /></span>
+                </button>
+                <button data-revealer="configuration" data-floating id="edit-palette" data-size="fit" data-type="primary">
+                    <span><Icon name="pencil" /></span>
+                </button>
+            </div>
+        </main>
+    </Body>
+</Page>
