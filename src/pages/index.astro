@@ -11,6 +11,7 @@ import Header from "@layouts/Header.astro";
 import Body from "@layouts/Body.astro";
 import WorkNote from "@components/WorkNote.astro";
 import DarkModeButton from "@components/DarkModeButton.astro";
+import Container from "@layouts/Container.astro";
 ---
 
 <Page title="Albert's Place" description="Sai Aung Kyaw Htet (Albert)'s portfolio and personal blog.">
@@ -21,56 +22,62 @@ import DarkModeButton from "@components/DarkModeButton.astro";
         </Header>
         <main class="w-full h-full overflow-scroll">
             <Section id="home">
-                <h1>
-                    <span>
-                        Web developer <br/>
-                        making what should work, <br/>
-                        work, and neatly.
-                    </span>
-                </h1>
-                <p>
-                    <span>
-                        I am Sai Aung Kyaw Htet / Albert ― a programming enthusiast
-                        who is passionate about learning and problem solving, and
-                        constantly seeking opportunities to apply the ways of systematic problem solving
-                        to learn from and solve real-life problems.
-                    </span>
-                </p>
-                <nav class="py-md">
-                    <ul class="grid gap-sm">
-                        <li>
-                            <a href="#works"><span>Works</span></a>
-                        </li>
-                        <li>
-                            <a href="#connect"><span>Connect</span></a>
-                        </li>
-                    </ul>
-                </nav>
+                <Container>
+                    <h1>
+                        <span>
+                            Web developer <br/>
+                            making what should work, <br/>
+                            work, and neatly.
+                        </span>
+                    </h1>
+                    <p>
+                        <span>
+                            I am Sai Aung Kyaw Htet / Albert ― a programming enthusiast
+                            who is passionate about learning and problem solving, and
+                            constantly seeking opportunities to apply the ways of systematic problem solving
+                            to learn from and solve real-life problems.
+                        </span>
+                    </p>
+                    <nav class="py-md">
+                        <ul class="grid gap-sm">
+                            <li>
+                                <a href="#works"><span>Works</span></a>
+                            </li>
+                            <li>
+                                <a href="#connect"><span>Connect</span></a>
+                            </li>
+                        </ul>
+                    </nav>
+                </Container>
             </Section>
             <Separator />
             <Section id="works">
-                <h3>
-                    <span>Featured Works</span>
-                </h3>
-                <p>
-                    <span>Some projects I've worked on and proud of.</span>
-                </p>
-                <br/>
-                <ProjectCatalogue client:load url="/featured-projects" sector="" />
+                <Container>
+                    <h3>
+                        <span>Featured Works</span>
+                    </h3>
+                    <p>
+                        <span>Some projects I've worked on and proud of.</span>
+                    </p>
+                    <br/>
+                    <ProjectCatalogue client:load url="/featured-projects" sector="" />
+                </Container>
             </Section>
             <Separator />
             <Section id="connect">
-                <h3>
-                    Connect 
-                </h3>
-                <p>
-                    <span>
-                        Get in touch with me for
-                        <em class="text-fore">freelance, full-time, part-time and contributive</em>
-                        projects on <em class="text-fore">web frontend, backend and machine learning</em>.
-                    </span>
-                </p>
-                <ContactLinks />
+                <Container>
+                    <h3>
+                        <span>Connect</span>
+                    </h3>
+                    <p>
+                        <span>
+                            Get in touch with me for
+                            <em class="text-fore">freelance, full-time, part-time and contributive</em>
+                            projects on <em class="text-fore">web frontend, backend and machine learning</em>.
+                        </span>
+                    </p>
+                    <ContactLinks />
+                </Container>
             </Section>
             <footer class="p-xl flex justify-between">
                 <WorkNote />

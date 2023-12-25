@@ -1,13 +1,28 @@
 ---
 interface Props {
     id: string,
-    height?: "full" | "fit"
+    height?: "full" | "fit",
+    place?: "start" | "center" | "end",
 }
-const { id, height } = Astro.props;
+let { id, height, place } = Astro.props;
+height ??= "fit";
+place ??= "center";
+
+let pl = "";
+let h = "";
+
+switch (place) {
+    case "start": pl = "place-items-start"; break;
+    case "center": pl = "place-items-center"; break;
+    case "end": pl = "place-items-end"; break;
+}
+
+switch (height) {
+    case 'full': h = "h-full"; break;
+    case 'fit': h = "h-fit"; break;
+}
 ---
 
-<section id={id} class=`w-full h-${height} p-xl grid place-items-center`>
-    <div class="max-w-[70ch] w-full">
-        <slot/>
-    </div>
+<section id={id} class={`w-full ${h} p-xl grid ${pl} gap-xl`}>
+    <slot/>
 </section>

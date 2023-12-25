@@ -40,7 +40,7 @@ const channelMap: Record<string, Record<string, string>> = {
 
 <script src="@scripts/elster/palette/onload.ts"></script>
 
-<Page title="Palenia | App" description="Palenia: An Algorithmic Color Palette Generator">
+<Page title="Elster / Palette | App" description="Elster / Palette: An Algorithmic Color Palette Generator">
     <Body slot="body">
         <Header>
             <span class="text-lg"><Icon name="logo" /></span>
@@ -114,17 +114,17 @@ const channelMap: Record<string, Record<string, string>> = {
             </div>
             <div class="h-min [grid-row:1/span_1] [grid-column:1/span_1] justify-self-end self-end flex gap-md p-lg">
                 <button id="add-palette" data-floating data-size="fit">
-                    <span><Icon name="plus" /></span>
+                    <span><Icon client:load name="mdi:plus" /></span>
                 </button>
                 <button id="remove-palette" data-floating data-size="fit">
-                    <span><Icon name="minus" /></span>
+                    <span><Icon client:load name="mdi:minus" /></span>
                 </button>
                 <button class="group" id="view-colors" data-floating data-size="fit" data-show-patch-label="false">
-                    <span class="group-data-[show-patch-label='true']:hidden"><Icon name="eye" /></span>
-                    <span class="group-data-[show-patch-label='false']:hidden"><Icon name="eye-off" /></span>
+                    <span class="group-data-[show-patch-label='true']:hidden"><Icon client:load name="mdi:eye" /></span>
+                    <span class="group-data-[show-patch-label='false']:hidden"><Icon client:load name="mdi:eye-off" /></span>
                 </button>
                 <button data-revealer="configuration" data-floating id="edit-palette" data-size="fit" data-type="primary">
-                    <span><Icon name="pencil" /></span>
+                    <span><Icon client:load name="mdi:pencil" /></span>
                 </button>
             </div>
         </main>

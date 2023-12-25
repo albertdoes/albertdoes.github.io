@@ -1,0 +1,32 @@
+---
+interface Props {
+    width?: "xs" | "sm" | "md" | "lg" | "xl" | "full",
+    height?: "full" | "fit",
+    classes?: string
+}
+
+let { width, height, classes } = Astro.props;
+width ??= "md";
+height ??= "fit";
+classes ??= "";
+
+let mw = "";
+let h = "";
+
+switch (width) {
+    case "xs": mw = "max-w-screen-xs"; break;
+    case "sm": mw = "max-w-screen-sm"; break;
+    case "md": mw = "max-w-screen-md"; break;
+    case "lg": mw = "max-w-screen-lg"; break;
+    case "xl": mw = "max-w-screen-xl"; break;
+}
+
+switch (height) {
+    case "full": h = "h-full"; break;
+    case "fit": h = "h-fit"; break;
+}
+---
+
+<div class={`${mw} w-full ${h} ${classes}`}>
+    <slot />
+</div>

@@ -9,6 +9,7 @@ import Page from "@layouts/Page.astro";
 import Section from "@layouts/Section.astro";
 import WorkNote from "@components/WorkNote.astro";
 import ProjectCatalogue from "@components/ProjectCatalogue";
+import Container from "@layouts/Container.astro";
 ---
 
 <Page title="Elster" description="Elster: A series of web app projects by albertdoes.">
@@ -19,22 +20,26 @@ import ProjectCatalogue from "@components/ProjectCatalogue";
         </Header>
         <main class="w-full h-full overflow-scroll marquee-y">
             <Section id="home" height="full">
-                <h1>
-                    <span>Elster</span> <br/>
-                    <span>A series of</span> <br/>
-                    <span>web applications</span>
-                </h1>
-                <p>
-                    <span>
-                        Elster is a series of web applications made by <a data-fetch="/misc/links.json:github">@albertdoes</a>.
-                    </span>
-                </p>
+                <Container>
+                    <h1>
+                        <span>Elster</span> <br/>
+                        <span>A series of</span> <br/>
+                        <span>web applications</span>
+                    </h1>
+                    <p>
+                        <span>
+                            Elster is a series of web applications made by <a data-fetch="/misc/links.json:github">@albertdoes</a>.
+                        </span>
+                    </p>
+                </Container>
             </Section>
             <Section id="tips">
-                <h2>
-                    <span>Elster apps</span>
-                </h2>
-                <ProjectCatalogue client:load url="/featured-projects" sector="elster" />
+                <Container>
+                    <h2>
+                        <span>Elster apps</span>
+                    </h2>
+                    <ProjectCatalogue client:load url="/featured-projects" sector="elster" />
+                </Container>
             </Section>
             <footer class="p-xl flex justify-between">
                 <WorkNote />

@@ -30,7 +30,7 @@ export default function Project(props: { url?: string }) {
                         {info.name ?? "Project Name"}
                     </span>
                     <a className="button-like" href={info.url}>
-                        <span><Icon name="arrow-right" /></span>
+                        <span><Icon name="ic:baseline-arrow-forward" /></span>
                     </a>
                 </h4>
                 <div>

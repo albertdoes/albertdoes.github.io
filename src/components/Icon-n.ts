@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { createState } from "witting";
 
 async function getSVG(iconifyID: string) {
     if(iconifyID === "logo") return "";
@@ -11,13 +11,4 @@ async function getSVG(iconifyID: string) {
         console.log(error);
         return "";
     }
-}
-
-export default function Icon(props: { name: string }) {
-    const [ svg, setSvg ] = useState("");
-    getSVG(props.name).then(svg => setSvg(svg));
-    return (
-        <span dangerouslySetInnerHTML={{ __html: svg }}>
-        </span>
-    )
 }

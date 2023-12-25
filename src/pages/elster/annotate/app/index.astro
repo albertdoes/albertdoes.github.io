@@ -1,0 +1,112 @@
+---
+import "@styles/index.css"
+
+import Page from "@layouts/Page.astro"
+import Body from "@layouts/Body.astro";
+import Header from "@layouts/Header.astro";
+import DarkModeButton from "@components/DarkModeButton.astro";
+import Icon from "@components/Icon";
+import Section from "@layouts/Section.astro";
+import Container from "@layouts/Container.astro";
+---
+
+<script src="@scripts/elster/annotate/onload.ts"></script>
+
+<Page title="Elster / Annotate | App" description="Elster / Annotate: An Algorithmic Color Palette Generator">
+    <Body slot="body">
+        <Header>
+            <span class="text-lg"><Icon client:load name="logo" /></span>
+            <DarkModeButton />
+        </Header>
+        <main class="w-full h-full overflow-hidden grid place-items-center">
+            <div class="w-full h-full overflow-scroll">
+                <Section id="login" height="full">
+                    <Container classes="!max-w-[25ch] grid place-items-center gap-xl">
+                        <h3 class="w-full">
+                            <span>Credentials</span>
+                        </h3>
+                        <form class="w-full grid gap-xl">
+                            <div>
+                                <label>Username</label>
+                                <input type="text" />
+                            </div>
+                            <div>
+                                <label>Password</label>
+                                <input type="text" />
+                            </div>
+                        </form>
+                        <div class="w-full grid gap-md">
+                            <button data-size="full" data-type="primary">
+                                <span>Sign In</span>
+                            </button>
+                            <button data-size="full">
+                                <span>Sign Up</span>
+                            </button>
+                        </div>
+                    </Container>
+                </Section>
+                <Section id="home" height="full" place="center">
+                    <Container height="full" width="md" classes="flex flex-col gap-xl overflow-hidden">
+                        <div class="w-full h-full overflow-scroll marquee-y grid grid-flow-row auto-rows-[min-content] gap-xl">
+                            <div class="card w-full grid grid-rows-[1fr_auto]">
+                                <div>
+                                    <h2>
+                                        <span>Project</span>
+                                    </h2>
+                                    <p>
+                                        <span>
+                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam vitae fugiat quas expedita ullam deleniti vel distinctio, eveniet laborum reprehenderit illo ipsum ipsa eum cum corporis molestias corrupti non voluptatibus.
+                                        </span>
+                                    </p>
+                                    <br/>
+                                    <button data-size="full">
+                                        <span>Open</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <button data-size="full" data-type="primary">
+                            <span>New Project</span>
+                            <span><Icon client:load name="mdi:plus" /></span>
+                        </button>
+                    </Container>
+                </Section>
+                <Section id="project-home" height="full">
+                    <Container width="md" height="full">
+                        <h2>
+                            <span>Project Profile</span>
+                        </h2>
+                        <br/>
+                        <form class="w-full grid gap-xl">
+                            <div class="w-full grid gap-xs">
+                                <label>Name</label>
+                                <input type="text" value="Project" />
+                            </div>
+                            <div class="w-full grid gap-xs">
+                                <label>Description</label>
+                                <textarea spellcheck="false" rows="3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam vitae fugiat quas expedita ullam deleniti vel distinctio, eveniet laborum reprehenderit illo ipsum ipsa eum cum corporis molestias corrupti non voluptatibus.</textarea>
+                            </div>
+                            <div class="w-full h-fit grid gap-xs">
+                                <label>Data Type</label>
+                                <div aria-disabled="false" class="flex gap-md">
+                                    <div class="flex gap-md items-center">
+                                        <input type="radio" name="data-type" value="image" />
+                                        <span>Image</span>
+                                    </div>
+                                    <div class="flex gap-md items-center">
+                                        <input type="radio" name="data-type" value="text" />
+                                        <span>Text</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div aria-disabled="false" class="w-full grid gap-xs">
+                                <label>Dataset Location</label>
+                                <input type="text" value="Project" />
+                            </div>
+                        </form>
+                    </Container>
+                </Section>
+            </div>
+        </main>
+    </Body>
+</Page>

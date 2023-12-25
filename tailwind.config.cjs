@@ -21,10 +21,10 @@ module.exports = {
     theme: {
         screens: {
             "xs": "40ch",
-            "sm": "55ch",
-            "md": "70ch",
-            "lg": "90ch",
-            "xl": "105ch",
+            "sm": "60ch",
+            "md": "80ch",
+            "lg": "100ch",
+            "xl": "120ch",
         },
         colors: {
             transparent: "transparent",
